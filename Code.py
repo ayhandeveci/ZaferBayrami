@@ -28,7 +28,7 @@ city_colors = {city: 'red' for city in city_gdf['name']}  # Tüm şehirleri baş
 
 # Hedef şehirleri sarı yap
 for city in target_cities:
-    city_colors[city] = 'yellow'
+    city_colors[city] = 'black'
 
 # Haritayı çizdirmek için fonksiyon
 def draw_map():
@@ -37,7 +37,7 @@ def draw_map():
     for city in city_gdf['name']:
         city_color = city_colors[city]
         city_gdf[city_gdf['name'] == city].plot(ax=ax, color=city_color, edgecolor='white')
-    ax.set_title('Türkiye Haritası - İl Sınırları')
+    ax.set_title('')
     ax.set_axis_off()
     plt.draw()
 
